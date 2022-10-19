@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header/>
-        <div class="contact">
+        <div class="contact mt-12">
             <v-container>
                 <v-row>
                     <v-col class="contact-item" md="4" cols="12">
@@ -94,7 +94,7 @@
 
                                 <v-btn
                                         :disabled="!valid"
-                                        color="#FFFBC8"
+                                        color="#E5E5E5"
                                         @click="validate"
                                 >
                                     Validate
@@ -102,7 +102,7 @@
                                     <v-progress-circular
                                             v-if="contactLoad === true"
                                             indeterminate
-                                            color="#F6B401"
+                                            color="#e9f4ff"
                                             size="20"
                                     ></v-progress-circular>
                                 </v-btn>
@@ -209,13 +209,13 @@
         padding: 30px;
     }
     .contact-item {
-        background-color: #FFFEE9;
+        background-color: #e9f4ff;
         padding: 15px;
         border-radius: 20px;
         margin: 8px;
     }
     .contact-form {
-        background-color: #FFFEE9;
+        background-color: #e9f4ff;
         padding: 25px;
         border-radius: 20px;
     }

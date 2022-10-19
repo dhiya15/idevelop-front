@@ -54,7 +54,7 @@
 <style scoped>
     .footer {
         padding: 30px;
-        background-image: linear-gradient(to right, #fff4b9, rgb(255, 254, 233));
+        background-image: linear-gradient(to right, #c1e1fc, #e8f5ff);
     }
     .footer-item-content {
         margin-top: 10px;

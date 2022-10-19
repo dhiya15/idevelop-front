@@ -1,5 +1,5 @@
 <template>
-    <div class="faq pt-10 pb-10" id="faq">
+    <div class="faq pt-10" id="faq">
         <h1 class="heading text-center">Frequently Asked Questions</h1>
         <v-row class="faq-row">
             <v-col cols="12">

@@ -1,13 +1,15 @@
 <template>
     <div class="all">
+        <Header v-if="isHidden === false"/>
         <v-container>
-            <Header v-if="isHidden === false"/>
             <Hero/>
             <Services/>
+            <Workshops/>
             <WhyUs/>
             <Faq/>
         </v-container>
-
+        <CallToAction/>
+        <Footer/>
     </div>
 </template>
 
@@ -17,11 +19,17 @@
     import Services from '../components/Services';
     import Faq from '../components/Faq';
     import WhyUs from "../components/WhyUs";
+    import Footer from "../components/Footer";
+    import CallToAction from "../components/CallToAction";
+    import Workshops from "../components/Workshops";
 
     export default {
         // eslint-disable-next-line vue/multi-word-component-names
         name: 'Home',
         components: {
+            Workshops,
+            CallToAction,
+            Footer,
             WhyUs,
             Header,
             Hero,
