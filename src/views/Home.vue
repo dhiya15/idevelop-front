@@ -4,8 +4,8 @@
         <v-container>
             <Hero/>
             <Services/>
-            <Workshops/>
-            <WhyUs/>
+            <Solutions/>
+            <Gallery/>
             <Faq/>
         </v-container>
         <CallToAction/>
@@ -18,19 +18,19 @@
     import Hero from '../components/Hero';
     import Services from '../components/Services';
     import Faq from '../components/Faq';
-    import WhyUs from "../components/WhyUs";
     import Footer from "../components/Footer";
     import CallToAction from "../components/CallToAction";
-    import Workshops from "../components/Workshops";
+    import Solutions from "../components/Solutions";
+    import Gallery from "../components/Gallery";
 
     export default {
         // eslint-disable-next-line vue/multi-word-component-names
         name: 'Home',
         components: {
-            Workshops,
+            Gallery,
+            Solutions,
             CallToAction,
             Footer,
-            WhyUs,
             Header,
             Hero,
             Services,

@@ -1,7 +1,7 @@
 <template>
     <section class="cta">
-        <h1>Lorem ipsum dolor sit, Lorem <br> sipsum dolor sit amet</h1>
-        <a href="#" class="hero-btn">Contact US</a>
+        <h1>If you have any suggestion or question<br>feel free to contact us</h1>
+        <a href="#" class="hero-btn" @click="$router.push({path: '/contact'})">Contact US</a>
     </section>
 </template>
 

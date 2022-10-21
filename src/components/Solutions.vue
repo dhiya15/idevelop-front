@@ -1,17 +1,17 @@
 <template>
     <div class="services pt-15 pb-10" id="workshops">
         <v-container>
-            <h1 class="heading">Workshops title</h1>
+            <h1 class="heading">Solutions title</h1>
             <p class="paragraph">
-                Workshops title workshops title workshops title workshops title
+                Solutions title Solutions title Solutions title Solutions title
             </p>
             <v-row class="services-row">
                 <v-col md="4" sm="6" cols="12">
                     <div class="services-item">
                         <img class="service-image" alt="service image" height="150" src="https://source.unsplash.com/user/c_v_r/100x100">
-                        <h3 class="service-title">Workshop 01</h3>
+                        <h3 class="service-title">Solutions 01</h3>
                         <p class="service-content">
-                            Workshops title workshops title workshops title workshops title<br>
+                            Solutions title Solutions title Solutions title Solutions title<br>
                             <small><i>12/02/2022</i></small>
                         </p>
                         <v-btn
@@ -27,9 +27,9 @@
                 <v-col md="4" sm="6" cols="12">
                     <div class="services-item">
                         <img class="service-image" alt="service image" height="150" src="https://source.unsplash.com/user/c_v_r/100x100">
-                        <h3 class="service-title">Workshop 01</h3>
+                        <h3 class="service-title">Solutions 01</h3>
                         <p class="service-content">
-                            Workshops title workshops title workshops title workshops title<br>
+                            Solutions title Solutions title Solutions title Solutions title<br>
                             <small><i>12/02/2022</i></small>
                         </p>
                         <v-btn
@@ -45,9 +45,9 @@
                 <v-col md="4" sm="6" cols="12">
                     <div class="services-item">
                         <img class="service-image" alt="service image" height="150" src="https://source.unsplash.com/user/c_v_r/100x100">
-                        <h3 class="service-title">Workshop 01</h3>
+                        <h3 class="service-title">Solutions 01</h3>
                         <p class="service-content">
-                            Workshops title workshops title workshops title workshops title<br>
+                            Solutions title Solutions title Solutions title Solutions title<br>
                             <small><i>12/02/2022</i></small>
                         </p>
                         <v-btn

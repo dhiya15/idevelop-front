@@ -78,6 +78,9 @@
 </script>
 
 <style scoped>
+    .hero {
+        height: 100vh;
+    }
     .hero-title {
         font-size: 50px;
         color: #66666a;
