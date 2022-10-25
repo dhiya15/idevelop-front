@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header/>
+        <Header :magasin="magasin"/>
         <div class="contact mt-12">
             <v-container>
                 <v-row>
@@ -12,9 +12,9 @@
                             <v-col cols="10">
                                 <h3>Contact information</h3>
                                 <p class="mt-2">
-                                    <span>Email: contact@idevelop.club</span>
+                                    <span>Email: {{magasin.email}}</span>
                                     <br>
-                                    <span>Phone: 06-72-02-34-97</span>
+                                    <span>Phone: {{magasin.phone}}</span>
                                 </p>
                             </v-col>
                         </v-row>
@@ -28,7 +28,7 @@
                             <v-col cols="10">
                                 <h3>Address</h3>
                                 <p class="mt-2">
-                                    <span>Street of ali bouhassoun, Kerzaz</span>
+                                    <span>{{magasin.address}}</span>
                                 </p>
                             </v-col>
                         </v-row>
@@ -42,9 +42,9 @@
                             <v-col cols="10">
                                 <h3>Working Hours</h3>
                                 <p class="mt-2">
-                                    <span>Sturday-Thursday</span>
+                                    <span>{{magasin.working_days}}</span>
                                     <br>
-                                    <span>14:00 - 18:00</span>
+                                    <span>{{magasin.working_hours}}</span>
                                 </p>
                             </v-col>
                         </v-row>
@@ -114,7 +114,7 @@
                 </div>
             </v-container>
         </div>
-        <Footer/>
+        <Footer :magasin="magasin"/>
     </div>
 </template>
 

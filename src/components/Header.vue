@@ -3,7 +3,7 @@
   <div>
     <v-app-bar dense app color="white" elevation="3" light>
       <v-toolbar-title>
-        <img src="../assets/logo.svg" height="32" alt="ID Logo" class="mt-1"/>
+        <img :src="'https://idevelop.club/Dashboard' + magasin.logo" height="32" alt="ID Logo" class="mt-1"/>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -59,7 +59,9 @@
   export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name: 'Header',
-
+    props:{
+      magasin: Object
+    },
     data: () => ({
       menus: [
         {id: "/", title: "Home", route:"/"},

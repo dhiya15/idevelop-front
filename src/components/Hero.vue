@@ -1,7 +1,7 @@
 <template>
     <v-col class="hero">
         <v-row justify="center" align="center" align-content="center">
-            <img src="../assets/logo.svg" height="32" alt="ID Logo" class="mt-1"/>
+            <img :src="'https://idevelop.club/Dashboard' + magasin.logo" height="32" alt="ID Logo" class="mt-1"/>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-list class="d-flex align-center" style="background-color: transparent">
@@ -50,9 +50,9 @@
         </v-row>
         <v-row style="margin-top: 40px">
             <v-col lg="7" md="7" cols="12" align-self="center">
-                <h1 class="hero-title">ici c'est IDevelopClub</h1>
+                <h1 class="hero-title">{{magasin.title}}</h1>
                 <p class="hero-content">
-                    Develop intuitive and interactive apps by leveraging the on-demand frontend technology and capabilities of VueJs.
+                    {{magasin.description}}
                 </p>
                 <v-btn color="#1D8BE1" class="hero-button" @click="$router.push({path: '/contact'})" large>
                     Contact-US
@@ -69,6 +69,9 @@
     export default {
         // eslint-disable-next-line vue/multi-word-component-names
         name: "Hero",
+        props:{
+            magasin: Object
+        },
         data: () => ({
             menus: [
                 {id: "/", title: "Home", route:"/"}

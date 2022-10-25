@@ -1,9 +1,9 @@
 <template>
     <div id="events">
         <v-container class="gallery">
-            <h1 class="gallery-title">Event header</h1>
-            <p class="gallery-content paragraph">
-                Event header Event header Event header Event header Event header
+            <h1 class="gallery-title">{{gallery_header.title}}</h1>
+            <p class="paragraph">
+                {{gallery_header.description}}
             </p>
             <v-carousel cycle style="overflow: auto;" :show-arrows="true" :hide-delimiters="true" :hide-delimiter-background="true">
                 <v-carousel-item
@@ -16,7 +16,7 @@
                 >
                     <div class="text-center" >
 <!--                        <img alt="image" :src="'http://localhost:8000/' + carousel.image" style="border-radius: 20px; width: 100%; height: 400px"/>-->
-                        <img :src="'https://sandfish.club/Dashboard/SandFishBack/public/' + carousel.image" style="border-radius: 20px; width: 100%; height: 400px"/>
+                        <img :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + carousel.image" style="border-radius: 20px; width: 100%; height: 420px"/>
                         <v-col class="text-pre-wrap" align="center" justify="center" align-self="center">
                             <span class="title">{{carousel.title}}</span>
                             <p>{{carousel.description}}</p>
@@ -34,24 +34,11 @@
         name: "Gallery",
         props: {
             gallery_header: Object,
-            //gallery_content: Array
+            gallery_content: Array
         },
         data() {
             return {
-                gallery_content: [
-                    {
-                        title: 'title 01',
-                        description: 'description 01',
-                    },
-                    {
-                        title: 'title 02',
-                        description: 'description 02',
-                    },
-                    {
-                        title: 'title 03',
-                        description: 'description 03',
-                    }
-                ]
+
             }
         },
     }

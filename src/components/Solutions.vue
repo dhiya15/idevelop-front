@@ -1,71 +1,35 @@
 <template>
     <div class="services pt-15 pb-10" id="workshops">
         <v-container>
-            <h1 class="heading">Solutions title</h1>
+            <h1 class="heading">{{solutions_header.title}}</h1>
             <p class="paragraph">
-                Solutions title Solutions title Solutions title Solutions title
+                {{solutions_header.description}}
             </p>
             <v-row class="services-row">
-                <v-col md="4" sm="6" cols="12">
-                    <div class="services-item">
-                        <img class="service-image" alt="service image" height="150" src="https://source.unsplash.com/user/c_v_r/100x100">
-                        <h3 class="service-title">Solutions 01</h3>
+                <v-col md="4" sm="6" cols="12" v-for="index in paginationLength" :key="index">
+                    <div class="services-item" v-if="index <= solutions_content.length">
+                        <img class="service-image" alt="service image" height="150" :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + solutions_content[page * paginationLength - paginationLength + index - 1].image">
+                        <h3 class="service-title">{{solutions_content[page * paginationLength - paginationLength + index - 1].title}}</h3>
                         <p class="service-content">
-                            Solutions title Solutions title Solutions title Solutions title<br>
-                            <small><i>12/02/2022</i></small>
+                            {{solutions_content[page * paginationLength - paginationLength + index - 1].description}} <br>
+                            <small><i>{{solutions_content[page * paginationLength - paginationLength + index - 1].created_at}}</i></small>
                         </p>
                         <v-btn
                             class="service-button"
                             color="#1D8BE1"
                             outlined rounded
-                            @click="console.log('hello')"
-                        >
-                            Read more
-                        </v-btn>
-                    </div>
-                </v-col>
-                <v-col md="4" sm="6" cols="12">
-                    <div class="services-item">
-                        <img class="service-image" alt="service image" height="150" src="https://source.unsplash.com/user/c_v_r/100x100">
-                        <h3 class="service-title">Solutions 01</h3>
-                        <p class="service-content">
-                            Solutions title Solutions title Solutions title Solutions title<br>
-                            <small><i>12/02/2022</i></small>
-                        </p>
-                        <v-btn
-                                class="service-button"
-                                color="#1D8BE1"
-                                outlined rounded
-                                @click="console.log('hello')"
-                        >
-                            Read more
-                        </v-btn>
-                    </div>
-                </v-col>
-                <v-col md="4" sm="6" cols="12">
-                    <div class="services-item">
-                        <img class="service-image" alt="service image" height="150" src="https://source.unsplash.com/user/c_v_r/100x100">
-                        <h3 class="service-title">Solutions 01</h3>
-                        <p class="service-content">
-                            Solutions title Solutions title Solutions title Solutions title<br>
-                            <small><i>12/02/2022</i></small>
-                        </p>
-                        <v-btn
-                                class="service-button"
-                                color="#1D8BE1"
-                                outlined rounded
-                                @click="console.log('hello')"
+                            @click="$router.push({path: '/details/' + solutions_content[page * paginationLength - paginationLength + index - 1].id})"
                         >
                             Read more
                         </v-btn>
                     </div>
                 </v-col>
             </v-row>
-            <div class="text-center mt-6">
+            <div class="text-center mt-6" v-if="solutions_content.length > 0">
                 <v-pagination
                         color="#1D8BE1"
                         v-model="page"
-                        :length="Math.ceil(3/paginationLength)"
+                        :length="Math.ceil(solutions_content.length / paginationLength)"
                 ></v-pagination>
             </div>
         </v-container>
@@ -75,11 +39,15 @@
 <script>
     export default {
         // eslint-disable-next-line vue/multi-word-component-names
-        name: "Services",
+        name: "Solutions",
         data: () => ({
             paginationLength: 3,
             page: 1
-        })
+        }),
+        props: {
+            solutions_header: Object,
+            solutions_content: Array,
+        },
     }
 </script>
 

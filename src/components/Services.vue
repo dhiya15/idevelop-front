@@ -1,67 +1,30 @@
 <template>
     <div class="how-it-work pt-10 pb-10 text-center" id="services">
         <v-container>
-            <h1 class="heading">Our Service</h1>
+            <h1 class="heading">{{services_header.title}}</h1>
             <p class="paragraph">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                {{services_header.description}}
             </p>
             <v-row class="how-it-work-row text-center" align="center" align-content="center" justify="center">
-                <v-col md="3" sm="6" cols="12">
-                    <div class="how-it-work-item" @click="console.log('hello')">
-                        <img class="how-it-work-item-image" alt="service image" height="150" src="https://source.unsplash.com/user/c_v_r/100x100">
+                <v-col md="3" sm="6" cols="12" v-for="index in paginationLength" :key="index">
+                    <div class="how-it-work-item" @click="console.log('hello')" v-if="index <= services_content.length">
+                        <img class="how-it-work-item-image" alt="service image" height="150" :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + services_content[page * paginationLength - paginationLength + index - 1].image">
                         <h3 style="text-overflow: ellipsis; padding-left: 10px; padding-right: 10px" class="how-it-work-item-title">
-                            Service 01
+                            {{services_content[page * paginationLength - paginationLength + index - 1].title}}
                         </h3>
                         <p style="text-overflow: fade; padding-left: 10px; padding-right: 10px" class="how-it-work-item-content">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            {{services_content[page * paginationLength - paginationLength + index - 1].description}}
                         </p>
                     </div>
                 </v-col>
-                <v-col md="3" sm="6" cols="12">
-                    <div class="how-it-work-item" @click="console.log('hello')">
-                        <img class="how-it-work-item-image" alt="service image" height="150" src="https://source.unsplash.com/user/c_v_r/100x100">
-                        <h3 style="text-overflow: ellipsis; padding-left: 10px; padding-right: 10px" class="how-it-work-item-title">
-                            Service 01
-                        </h3>
-                        <p style="text-overflow: fade; padding-left: 10px; padding-right: 10px" class="how-it-work-item-content">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                    </div>
-                </v-col>
-                <v-col md="3" sm="6" cols="12">
-                    <div class="how-it-work-item" @click="console.log('hello')">
-                        <img class="how-it-work-item-image" alt="service image" height="150" src="https://source.unsplash.com/user/c_v_r/100x100">
-                        <h3 style="text-overflow: ellipsis; padding-left: 10px; padding-right: 10px" class="how-it-work-item-title">
-                            Service 01
-                        </h3>
-                        <p style="text-overflow: fade; padding-left: 10px; padding-right: 10px" class="how-it-work-item-content">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                    </div>
-                </v-col>
-                <v-col md="3" sm="6" cols="12">
-                    <div class="how-it-work-item" @click="console.log('hello')">
-                        <img class="how-it-work-item-image" alt="service image" height="150" src="https://source.unsplash.com/user/c_v_r/100x100">
-                        <h3 style="text-overflow: ellipsis; padding-left: 10px; padding-right: 10px" class="how-it-work-item-title">
-                            Service 01
-                        </h3>
-                        <p style="text-overflow: fade; padding-left: 10px; padding-right: 10px" class="how-it-work-item-content">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                        </p>
-                    </div>
-                </v-col>
-<!--                <v-col md="3" sm="6" cols="12" v-for="index in paginationLength" :key="index">-->
-<!--                    <div class="how-it-work-item" @click="$router.push({path: '/details/' + how_it_work_content[page * paginationLength - paginationLength + index - 1].id})" v-if="index <= how_it_work_content.length">-->
-<!--                        <img class="how-it-work-item-image" alt="service image" height="150" :src="'https://sandfish.club/Dashboard/SandFishBack/public/' + how_it_work_content[page * paginationLength - paginationLength + index - 1].image">-->
-<!--    &lt;!&ndash;                    <img class="how-it-work-item-image" alt="service image" height="150" :src="'http://localhost:8000/' + how_it_work_content[page * paginationLength - paginationLength + index - 1].image">&ndash;&gt;-->
-<!--    &lt;!&ndash;                    &ndash;&gt;-->
-<!--                        <h3 style="text-overflow: ellipsis; padding-left: 10px; padding-right: 10px" class="how-it-work-item-title">{{how_it_work_content[page * paginationLength - paginationLength + index - 1].title}}</h3>-->
-<!--                        <p style="text-overflow: fade; padding-left: 10px; padding-right: 10px" class="how-it-work-item-content">-->
-<!--                            {{how_it_work_content[page * paginationLength - paginationLength + index - 1].description}}-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </v-col>-->
             </v-row>
+<!--            <div class="text-center mt-6" v-if="services_content.length > 0">-->
+<!--                <v-pagination-->
+<!--                        color="#1D8BE1"-->
+<!--                        v-model="page"-->
+<!--                        :length="Math.ceil(services_content.length/paginationLength)"-->
+<!--                ></v-pagination>-->
+<!--            </div>-->
         </v-container>
     </div>
 </template>
@@ -70,11 +33,11 @@
     export default {
         name: "HowitWork",
         props: {
-            how_it_work_header: Object,
-            how_it_work_content: Array,
+            services_header: Object,
+            services_content: Array,
         },
         data: () => ({
-            paginationLength: 3,
+            paginationLength: 4,
             page: 1
         })
     }

@@ -1,44 +1,16 @@
 <template>
     <div class="faq pt-10" id="faq">
-        <h1 class="heading text-center">Frequently Asked Questions</h1>
+        <h1 class="heading text-center">{{faq_header.title}}</h1>
         <v-row class="faq-row">
             <v-col cols="12">
-                <v-expansion-panels flat style="margin-bottom: 10px">
-                    <v-expansion-panel>
+                <v-expansion-panels flat>
+                    <v-expansion-panel v-for="(item,i) in faq_content" :key="i" style="margin-bottom: 12px">
                         <v-expansion-panel-header class="faq-header">
-                            Frequently Asked Questions 1
+                            {{item.title}}
                         </v-expansion-panel-header>
                         <v-expansion-panel-content>
                             <div>
-                                <p>The VueJs framework is a progressive JavaScript framework used to implement user interfaces (UIs) and single-page applications (SPAs).</p>
-                            </div>
-                        </v-expansion-panel-content>
-                    </v-expansion-panel>
-                </v-expansion-panels>
-                <v-expansion-panels flat style="margin-bottom: 10px">
-                    <v-expansion-panel>
-                        <v-expansion-panel-header class="faq-header">
-                            Frequently Asked Questions
-                        </v-expansion-panel-header>
-                        <v-expansion-panel-content>
-                            <div>
-                                <p>The VueJs framework is a progressive JavaScript framework used to implement user interfaces (UIs) and single-page applications (SPAs).
-
-                                </p>
-                            </div>
-                        </v-expansion-panel-content>
-                    </v-expansion-panel>
-                </v-expansion-panels>
-                <v-expansion-panels flat style="margin-bottom: 10px">
-                    <v-expansion-panel>
-                        <v-expansion-panel-header class="faq-header">
-                            Frequently Asked Questions 3
-                        </v-expansion-panel-header>
-                        <v-expansion-panel-content>
-                            <div>
-                                <p>The VueJs framework is a progressive JavaScript framework used to implement user interfaces (UIs) and single-page applications (SPAs).
-
-                                </p>
+                                <p>{{item.description}}</p>
                             </div>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
