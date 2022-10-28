@@ -1,57 +1,47 @@
 <template>
-    <div class="services pt-15 pb-10" id="workshops">
+    <div class="how-it-work pt-10 pb-10 text-center" id="services">
         <v-container>
             <h1 class="heading">{{solutions_header.title}}</h1>
             <p class="paragraph">
                 {{solutions_header.description}}
             </p>
-            <v-row class="services-row">
-                <v-col md="4" sm="6" cols="12" v-for="index in paginationLength" :key="index">
-                    <div class="services-item" v-if="index <= solutions_content.length">
-                        <img class="service-image" alt="service image" height="150" :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + solutions_content[page * paginationLength - paginationLength + index - 1].image">
-                        <h3 class="service-title">{{solutions_content[page * paginationLength - paginationLength + index - 1].title}}</h3>
-                        <p class="service-content">
-                            {{solutions_content[page * paginationLength - paginationLength + index - 1].description}} <br>
-                            <small><i>{{solutions_content[page * paginationLength - paginationLength + index - 1].created_at}}</i></small>
-                        </p>
-                        <v-btn
-                            class="service-button"
-                            color="#1D8BE1"
-                            outlined rounded
-                            @click="$router.push({path: '/details/' + solutions_content[page * paginationLength - paginationLength + index - 1].id})"
-                        >
-                            Read more
-                        </v-btn>
-                    </div>
-                </v-col>
+            <v-row class="how-it-work-row text-center" align="center" align-content="center" justify="center">
+                <v-slide-group show-arrows>
+                    <v-slide-item v-for="index in solutions_content.length" :key="index">
+                        <div class="how-it-work-item" @click="console.log('hello')">
+                            <img class="how-it-work-item-image" alt="service image" height="150" :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + solutions_content[index - 1].image">
+                            <h3 style="text-overflow: ellipsis; padding-left: 10px; padding-right: 10px" class="how-it-work-item-title">
+                                {{solutions_content[index - 1].title}}
+                            </h3>
+                            <p style="text-overflow: fade; padding-left: 10px; padding-right: 10px" class="how-it-work-item-content">
+                                {{solutions_content[index - 1].description}}
+                            </p>
+                        </div>
+                    </v-slide-item>
+                </v-slide-group>
             </v-row>
-            <div class="text-center mt-6" v-if="solutions_content.length > 0">
-                <v-pagination
-                        color="#1D8BE1"
-                        v-model="page"
-                        :length="Math.ceil(solutions_content.length / paginationLength)"
-                ></v-pagination>
-            </div>
         </v-container>
     </div>
 </template>
 
 <script>
     export default {
-        // eslint-disable-next-line vue/multi-word-component-names
-        name: "Solutions",
-        data: () => ({
-            paginationLength: 3,
-            page: 1
-        }),
+        name: "HowitWork",
         props: {
             solutions_header: Object,
             solutions_content: Array,
         },
+        data: () => ({
+            paginationLength: 4,
+            page: 1
+        })
     }
 </script>
 
 <style scoped>
+    .how-it-work{
+        /*background-color: #FFFEE9;*/
+    }
     .heading {
         font-size: 36px;
         font-weight: 600;
@@ -63,33 +53,29 @@
         line-height: 22px;
         padding: 10px;
     }
-    .services-row {
+    .how-it-work-row {
         margin-top: 15px;
     }
-    .services-content {
-        margin-top: 15px;
-        font-size: 20px;
+    .how-it-work-item-image {
+        border-radius: 5%;
+        width: 80%;
     }
-    .services-item {
+    .how-it-work-item {
+        margin: 10px;
         padding: 30px;
-    }
-    .services-item:hover {
-        padding: 30px;
-        background-color: #ddeafc;
+        padding-bottom: 30px;
+        background-color: #F8FAFC;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        height: 380px;
+    }
+    .how-it-work-item-title {
+        margin-top: 10px;
+    }
+    .how-it-work-item-content {
+        margin-top: 10px;
+    }
+    .how-it-work-item:hover {
         cursor: pointer;
-    }
-    .services-title {
-        font-size: 40px;
-    }
-    .service-image {
-        border-radius: 20px;
-        width: 100%;
-    }
-    .service-title {
-        margin-top: 10px;
-    }
-    .service-content {
-        margin-top: 10px;
+        background-color: #c8d3ec;
     }
 </style>

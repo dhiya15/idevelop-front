@@ -4,7 +4,6 @@
         <div class="content mt-12">
             <v-container>
                 <h1>{{pub.title}}</h1>
-                <small>{{pub.created_at}}</small>
                 <p>{{pub.description}}</p>
 <!--                <img height="200" width="300" :src="'http://sorp-bechar.byethost10.com/back-side/example-app/public/' + pub.image"/>-->
                 <img height="200" width="300" :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + pub.image"/>

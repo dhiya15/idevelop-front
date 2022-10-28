@@ -2,28 +2,37 @@
     <div id="events">
         <v-container class="gallery">
             <h1 class="gallery-title">{{gallery_header.title}}</h1>
-            <p class="paragraph">
-                {{gallery_header.description}}
-            </p>
-            <v-carousel cycle style="overflow: auto;" :show-arrows="true" :hide-delimiters="true" :hide-delimiter-background="true">
-                <v-carousel-item
-                        v-for="(carousel, i) in gallery_content"
-                        :key="i"
-                        reverse-transition="fade-transition"
-                        transition="fade-transition"
-                        @click="$router.push({path: '/details/' + carousel.id})"
-                        style="cursor: pointer;"
-                >
-                    <div class="text-center" >
-<!--                        <img alt="image" :src="'http://localhost:8000/' + carousel.image" style="border-radius: 20px; width: 100%; height: 400px"/>-->
-                        <img :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + carousel.image" style="border-radius: 20px; width: 100%; height: 420px"/>
-                        <v-col class="text-pre-wrap" align="center" justify="center" align-self="center">
-                            <span class="title">{{carousel.title}}</span>
-                            <p>{{carousel.description}}</p>
-                        </v-col>
-                    </div>
-                </v-carousel-item>
-            </v-carousel>
+            <v-card flat tile class="mt-4">
+                <v-window v-model="onboarding" reverse>
+                    <v-window-item v-for="(carousel, i) in gallery_content" :key="i">
+                        <v-card color="grey" height="450">
+                            <v-row class="fill-height" align="center" justify="center">
+                                <img alt="" :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + carousel.image" style="border-radius: 20px; width: 100%; height: 450px"/>
+                            </v-row>
+                        </v-card>
+                        <div class="mt-3">
+                            <h2 class="text-center">{{carousel.title}}</h2>
+                            <div class="text-center" style="font-size: 14px">{{carousel.description}}</div>
+                        </div>
+                    </v-window-item>
+                </v-window>
+
+                <v-card-actions class="justify-space-between">
+                    <v-btn text @click="prev">
+                        <v-icon>mdi-chevron-left</v-icon>
+                    </v-btn>
+                    <v-item-group v-model="onboarding" class="text-center" mandatory>
+                        <v-item v-for="i in gallery_content.length" :key="i" v-slot="{ active, toggle }">
+                            <v-btn :input-value="active" icon @click="toggle">
+                                <v-icon>mdi-record</v-icon>
+                            </v-btn>
+                        </v-item>
+                    </v-item-group>
+                    <v-btn text @click="next">
+                        <v-icon>mdi-chevron-right</v-icon>
+                    </v-btn>
+                </v-card-actions>
+            </v-card>
         </v-container>
     </div>
 </template>
@@ -38,9 +47,27 @@
         },
         data() {
             return {
-
+                length: this.gallery_content.length,
+                onboarding: 1,
             }
         },
+        methods: {
+            next () {
+                this.onboarding = this.onboarding + 1 === this.length
+                    ? 0
+                    : this.onboarding + 1
+            },
+            prev () {
+                this.onboarding = this.onboarding - 1 < 0
+                    ? this.length - 1
+                    : this.onboarding - 1
+            },
+        },
+        created() {
+            setInterval(() => {
+                this.next()
+            }, 10000)
+        }
     }
 </script>
 

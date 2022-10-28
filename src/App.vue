@@ -20,6 +20,6 @@ export default {
 </script>
 <style scoped>
   * {
-    font-family: "verdana";
+    font-family: "candara";
   }
 </style>

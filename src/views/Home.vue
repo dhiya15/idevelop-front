@@ -3,9 +3,12 @@
         <Header :magasin="magasin" v-if="isHidden === false"/>
         <v-container>
             <Hero :magasin="magasin"/>
-            <Services :services_header="services_header" :services_content="services_content"/>
+        </v-container>
+        <Gallery :gallery_header="gallery_header" :gallery_content="gallery_content"/>
+        <v-container>
             <Solutions :solutions_header="solutions_header" :solutions_content="solutions_content"/>
-            <Gallery :gallery_header="gallery_header" :gallery_content="gallery_content"/>
+            <Workshops :workshops_header="workshops_header" :workshops_content="workshops_content"/>
+
             <Faq :faq_header="faq_header" :faq_content="faq_content"/>
         </v-container>
         <CallToAction/>
@@ -23,11 +26,11 @@
 <script >
     import Header from '../components/Header';
     import Hero from '../components/Hero';
-    import Services from '../components/Services';
+    import Solutions from '../components/Solutions';
     import Faq from '../components/Faq';
     import Footer from "../components/Footer";
     import CallToAction from "../components/CallToAction";
-    import Solutions from "../components/Solutions";
+    import Workshops from "../components/Workshops";
     import Gallery from "../components/Gallery";
 
     export default {
@@ -35,12 +38,12 @@
         name: 'Home',
         components: {
             Gallery,
-            Solutions,
+            Workshops,
             CallToAction,
             Footer,
             Header,
             Hero,
-            Services,
+            Solutions,
             Faq
         },
         data: () => ({
@@ -49,10 +52,10 @@
             magasin: {},
             faq_header: {},
             faq_content: [],
+            workshops_header: {},
+            workshops_content: [],
             solutions_header: {},
             solutions_content: [],
-            services_header: {},
-            services_content: [],
             gallery_header: {},
             gallery_content: []
         }),
@@ -81,10 +84,10 @@
                         this.magasin = response.data.magasin;
                         this.faq_header = response.data.faq_header[0];
                         this.faq_content = response.data.faq_content;
+                        this.workshops_header = response.data.workshops_header[0];
+                        this.workshops_content = response.data.workshops_content;
                         this.solutions_header = response.data.solutions_header[0];
                         this.solutions_content = response.data.solutions_content;
-                        this.services_header = response.data.services_header[0];
-                        this.services_content = response.data.services_content;
                         this.gallery_header = response.data.gallery_header[0];
                         this.gallery_content = response.data.gallery_content;
                         this.overlay = false
