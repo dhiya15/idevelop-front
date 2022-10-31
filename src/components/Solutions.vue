@@ -8,7 +8,7 @@
             <v-row class="how-it-work-row text-center" align="center" align-content="center" justify="center">
                 <v-slide-group show-arrows>
                     <v-slide-item v-for="index in solutions_content.length" :key="index">
-                        <div class="how-it-work-item" @click="console.log('hello')">
+                        <div class="how-it-work-item" @click="$router.push({path: '/details/' + solutions_content[index - 1].id})">
                             <img class="how-it-work-item-image" alt="service image" height="150" :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + solutions_content[index - 1].image">
                             <h3 style="text-overflow: ellipsis; padding-left: 10px; padding-right: 10px" class="how-it-work-item-title">
                                 {{solutions_content[index - 1].title}}

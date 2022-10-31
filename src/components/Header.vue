@@ -14,10 +14,10 @@
             </v-list-item>
           </a>
           <v-list-item  link to="/magazine">
-            <v-list-item-title>Magazine</v-list-item-title>
+            <v-list-item-title>ID Magazine</v-list-item-title>
           </v-list-item>
-          <v-list-item  link to="/cv">
-            <v-list-item-title>Our CV</v-list-item-title>
+          <v-list-item  link to="/magazine">
+            <v-list-item-title>ID Channel</v-list-item-title>
           </v-list-item>
           <v-list-item  link to="/contact">
             <v-list-item-title>Contact US</v-list-item-title>
@@ -39,10 +39,10 @@
               </v-list-item>
             </a>
             <v-list-item  link to="/magazine">
-              <v-list-item-title>Magazine</v-list-item-title>
+              <v-list-item-title>ID Magazine</v-list-item-title>
             </v-list-item>
-            <v-list-item  link to="/cv">
-              <v-list-item-title>Our CV</v-list-item-title>
+            <v-list-item  link to="/magazine">
+              <v-list-item-title>ID Channel</v-list-item-title>
             </v-list-item>
             <v-list-item  link to="/contact">
               <v-list-item-title>Contact US</v-list-item-title>
