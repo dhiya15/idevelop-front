@@ -5,9 +5,9 @@
             <v-card flat tile class="mt-4">
                 <v-window v-model="onboarding" reverse>
                     <v-window-item v-for="(carousel, i) in gallery_content" :key="i">
-                        <v-card color="grey" height="400">
+                        <v-card color="grey" class="carousel-card">
                             <v-row class="fill-height" align="center" justify="center">
-                                <img alt="" :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + carousel.image" style="border-radius: 20px; width: 100%; height: 400px"/>
+                                <img alt="" :src="'https://idevelop.club/Dashboard/IDevelopBack/public/' + carousel.image" class="carousel-image"/>
                             </v-row>
                         </v-card>
                         <div class="mt-3">
@@ -88,5 +88,21 @@
         font-weight: 300;
         line-height: 22px;
         padding: 10px;
+    }
+    .carousel-image {
+        border-radius: 20px;
+        width: 100%;
+        height: 400px
+    }
+    .carousel-card{
+        height: 400px
+    }
+    @media screen and (max-width: 480px) {
+        .carousel-image {
+            height: 200px
+        }
+        .carousel-card{
+            height: 200px
+        }
     }
 </style>

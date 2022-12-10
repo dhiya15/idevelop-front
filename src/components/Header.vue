@@ -1,9 +1,9 @@
 <template>
 
   <div>
-    <v-app-bar dense app color="white" elevation="3" light>
+    <v-app-bar dense app color="white" elevation="3" light height="60">
       <v-toolbar-title>
-        <img :src="'https://idevelop.club/Dashboard' + magasin.logo" height="32" alt="ID Logo" class="mt-1"/>
+        <img :src="'https://idevelop.club/Dashboard' + magasin.logo" height="45" alt="ID Logo" class="mt-1"/>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -16,7 +16,7 @@
           <v-list-item  link to="/magazine">
             <v-list-item-title>ID Magazine</v-list-item-title>
           </v-list-item>
-          <v-list-item  link to="/magazine">
+          <v-list-item  link to="/channel">
             <v-list-item-title>ID Channel</v-list-item-title>
           </v-list-item>
           <v-list-item  link to="/contact">
@@ -41,7 +41,7 @@
             <v-list-item  link to="/magazine">
               <v-list-item-title>ID Magazine</v-list-item-title>
             </v-list-item>
-            <v-list-item  link to="/magazine">
+            <v-list-item  link to="/channel">
               <v-list-item-title>ID Channel</v-list-item-title>
             </v-list-item>
             <v-list-item  link to="/contact">

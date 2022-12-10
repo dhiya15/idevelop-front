@@ -1,7 +1,7 @@
 <template>
     <v-col class="hero">
         <v-row justify="center" align="center" align-content="center">
-            <img :src="'https://idevelop.club/Dashboard' + magasin.logo" height="32" alt="ID Logo" class="mt-1"/>
+            <img :src="'https://idevelop.club/Dashboard' + magasin.logo" height="48" alt="ID Logo" class="mt-1"/>
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down">
                 <v-list class="d-flex align-center" style="background-color: transparent">
@@ -13,7 +13,7 @@
                     <v-list-item  link to="/magazine">
                         <v-list-item-title><b>ID Magazine</b></v-list-item-title>
                     </v-list-item>
-                    <v-list-item  link to="/magazine">
+                    <v-list-item  link to="/channel">
                         <v-list-item-title><b>ID Channel</b></v-list-item-title>
                     </v-list-item>
                     <v-list-item  link to="/contact">
@@ -38,7 +38,7 @@
                         <v-list-item  link to="/magazine">
                             <v-list-item-title><b>ID Magazine</b></v-list-item-title>
                         </v-list-item>
-                        <v-list-item  link to="/magazine">
+                        <v-list-item  link to="/channel">
                             <v-list-item-title><b>ID Channel</b></v-list-item-title>
                         </v-list-item>
                         <v-list-item  link to="/contact">

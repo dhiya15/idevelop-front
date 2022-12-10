@@ -13,14 +13,16 @@
 
 <style scoped>
     .cta {
-        margin: 50px auto;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 45px;
         width: 80%;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/banner2.jpg);
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../assets/banner.jpg);
         background-position: center;
         background-size: cover;
         border-radius: 10px;
         text-align: center;
-        padding: 100px 0;
+        padding: 120px 0;
     }
     .cta h1 {
         color: #fff;

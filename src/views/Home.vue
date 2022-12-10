@@ -3,13 +3,10 @@
         <Header :magasin="magasin" v-if="isHidden === false"/>
         <v-container>
             <Hero :magasin="magasin"/>
-        </v-container>
-        <Gallery :gallery_header="gallery_header" :gallery_content="gallery_content"/>
-        <v-container>
+            <Gallery :gallery_header="gallery_header" :gallery_content="gallery_content"/>
             <Solutions :solutions_header="solutions_header" :solutions_content="solutions_content"/>
             <Workshops :workshops_header="workshops_header" :workshops_content="workshops_content"/>
-
-            <Faq :faq_header="faq_header" :faq_content="faq_content"/>
+<!--            <Faq :faq_header="faq_header" :faq_content="faq_content"/>-->
         </v-container>
         <CallToAction/>
         <Footer :magasin="magasin"/>
@@ -44,6 +41,7 @@
             Header,
             Hero,
             Solutions,
+            // eslint-disable-next-line vue/no-unused-components
             Faq
         },
         data: () => ({

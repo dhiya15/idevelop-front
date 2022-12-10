@@ -8,7 +8,7 @@ Vue.use(VueRouter)
 import Home from './views/Home';
 import Contact from './views/Contact';
 import Magazine from './views/Magazine';
-import CV from './views/CV';
+import Channel from './views/Channel';
 import NotFound from './views/NotFound';
 import PublicationContent from "./views/PublicationContent";
 import axios from 'axios'
@@ -49,8 +49,8 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/our-cv',
-      component: CV,
+      path: '/channel',
+      component: Channel,
       meta: {
         title: 'Join US'
       }
