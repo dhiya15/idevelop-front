@@ -7,6 +7,7 @@ Vue.use(VueRouter)
 
 import Home from './views/Home';
 import Contact from './views/Contact';
+import IDJourney from './views/IDJourney';
 import Magazine from './views/Magazine';
 import Channel from './views/Channel';
 import NotFound from './views/NotFound';
@@ -15,8 +16,8 @@ import axios from 'axios'
 
 Vue.config.productionTip = false
 
-//axios.defaults.baseURL = 'http://localhost:8000/api/';
-axios.defaults.baseURL = 'https://idevelop.club/Dashboard/api/';
+axios.defaults.baseURL = 'http://localhost:8000/api/';
+//axios.defaults.baseURL = 'https://idevelop.club/Dashboard/api/';
 axios.defaults.headers.common = {
   "Content-Type": "application/json",
   Accept: "application/json",
@@ -53,6 +54,13 @@ const router = new VueRouter({
       component: Channel,
       meta: {
         title: 'Join US'
+      }
+    },
+    {
+      path: '/idjourney',
+      component: IDJourney,
+      meta: {
+        title: 'ID Journey'
       }
     },
     {
